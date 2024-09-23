@@ -1,0 +1,234 @@
+﻿<Window x:Class="ProgramGrade.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgramGrade"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Height="600" 
+        Width="1000"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown">
+
+    <Border CornerRadius="10"
+            Background="#DBDFEA">
+        <Border 
+                Margin="40"
+                Background="#212A3E">
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0">
+                    <TextBlock Text="โปรเเกรมตัดเกรด"
+                               FontSize="23"
+                               FontFamily="/font/#Gymno"
+                               Margin="25,5,0,0"
+                               Foreground="#E5F9DB"/>
+                    <Grid HorizontalAlignment="Right"
+                      Margin="0,-45,20,0">
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btn1"
+                            Height="20"
+                            Grid.Column="0"
+                            Click="btn1_Click"
+                            HorizontalAlignment="Right"
+                            Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Icon:PackIconMaterial Kind="Minus"
+                                                       Foreground="#fff"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                        <Button x:Name="btn2"
+                            Height="20"
+                            Grid.Column="1"
+                            Click="btn2_Click"
+                            HorizontalAlignment="Right"
+                            Cursor="Hand">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="img/close.png"
+                                   Width="20"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+        </StackPanel>
+                <StackPanel Grid.Row="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0"
+                            Width="400"
+                            Height="150"
+                            BorderThickness="7"
+                            Margin="0,0,0,0"
+                            CornerRadius="20">
+                            <Border.Background>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="#A1C2F1" Offset="0.9"/>
+                                    <GradientStop Color="#C4DFDF" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+
+                            <TextBlock x:Name="txtb1"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontSize="25"
+                                   FontFamily="/font/#Gymno"
+                                   FontWeight="Bold"
+                                   Foreground="#0E2954"
+                                       />
+                        </Border>
+
+                        <StackPanel Grid.Row="1"
+                                Margin="0,60,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0"
+                                    Width="200"
+                                    Height="100"
+                                    CornerRadius="15">
+                                    <Border.Background>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#0A6EBD" Offset="0.9"/>
+                                            <GradientStop Color="#9BCDD2" Offset="0"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <StackPanel>
+                                        <TextBlock Text="ก่อนกลางภาค"
+                                               FontSize="20"
+                                                   FontFamily="/font/#Gymno"
+                                               Margin="0,10,0,5"
+                                               Foreground="#394867"
+                                               HorizontalAlignment="Center"
+                                               FontWeight="Bold"/>
+                                        <TextBox Tag="ป้อนคะแนน"
+                                                 Style="{DynamicResource TextBoxStyle}" 
+                                                 x:Name="txt1"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Grid.Column="1"
+                                    Width="200"
+                                    Height="100"
+                                    CornerRadius="15">
+                                    <Border.Background>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#FFB84C" Offset="0.9"/>
+                                            <GradientStop Color="#F7D060" Offset="0"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <StackPanel>
+                                        <TextBlock Text="กลางภาค"
+                                               FontSize="20"
+                                               Margin="0,10,40,5"
+                                                   FontFamily="/font/#Gymno"
+                                               Foreground="#394867"
+                                               HorizontalAlignment="Center"
+                                               FontWeight="Bold"/>
+                                        <TextBox Tag="ป้อนคะแนน"
+                                                 Style="{DynamicResource TextBoxStyle}"
+                                                 x:Name="txt2"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Grid.Column="2"
+                                    Width="200"
+                                    Height="100"
+                                    CornerRadius="15">
+                                    <Border.Background>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#4F709C" Offset="0.9"/>
+                                            <GradientStop Color="#9DB2BF" Offset="0"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <StackPanel>
+                                        <TextBlock Text="ก่อนปลายภาค"
+                                               FontSize="20"
+                                                   FontFamily="/font/#Gymno"
+                                               Margin="0,10,15,5"
+                                               Foreground="#394867"
+                                               HorizontalAlignment="Center"
+                                               FontWeight="Bold"/>
+                                        <TextBox Tag="ป้อนคะแนน"
+                                                 Style="{DynamicResource TextBoxStyle}"
+                                                 x:Name="txt3"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Grid.Column="3"
+                                    Width="200"
+                                    Height="100"
+                                    CornerRadius="15">
+                                    <Border.Background>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#F24C3D" Offset="0.9"/>
+                                            <GradientStop Color="#EA906C" Offset="0"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <StackPanel>
+                                        <TextBlock Text="ปลายภาค"
+                                                   FontSize="20"
+                                                   FontFamily="/font/#Gymno"
+                                                   Margin="0,10,40,5"
+                                                   Foreground="#394867"
+                                                   HorizontalAlignment="Center"
+                                                   FontWeight="Bold"/>
+                                        <TextBox Tag="ป้อนคะแนน"
+                                                 Style="{DynamicResource TextBoxStyle}"
+                                                 x:Name="txt4"/>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="2"
+                                    Margin="0,80,0,0"
+                                    Width="500">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{DynamicResource ButtonStyleResult}"
+                                        Content="Result"
+                                        Grid.Column="0"
+                                        Click="Button_Click"/>
+
+                                <Button Style="{DynamicResource ButtonStyleDelete}"
+                                        Content="Delete"
+                                        Grid.Column="1"
+                                        Click="Button_Click_1"/>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                    
+                    
+                </StackPanel>
+            </Grid>
+    </Border>
+    </Border>
+</Window>
